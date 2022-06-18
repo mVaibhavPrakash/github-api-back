@@ -22,7 +22,12 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [process.env.FRONT, 'http://localhost:8081'],
+    credentials: true,
+  })
+);
 
 // mongodb connection
 connectDB();
