@@ -5,6 +5,7 @@ const allRoute = express.Router();
 
 allRoute.get('/getall', async (req, res) => {
   try {
+    console.log('all');
     const result = await Data.find();
     if (result != null) {
       res.status(200).send(result);
