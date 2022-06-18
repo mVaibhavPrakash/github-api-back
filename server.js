@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: 'http://localhost:8081',
+    origin: process.env.FRONT || 'http://localhost:8081',
   })
 );
 
@@ -27,7 +27,7 @@ app.use(allRoute);
 app.use(barchartRoute);
 
 //Server connection
-const PORT = 8082;
-app.listen(8082, () => {
+const PORT = process.env.APP_PORT || 8082;
+app.listen(PORT, () => {
   console.log('Server is connected');
 });
