@@ -14,17 +14,12 @@ app.use(urlencoded({ extended: false }));
 
 app.use(cookieParser());
 
-let allowCrossDomain = function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Content-Type, Authorization,Accept,Origin, Content-Length, X-Requested-With'
-  );
-  next();
+const corsOptions = {
+  origin: process.env.FRONT || 'http://localhost:8081',
+  credentials: true,
+  optionSuccessStatus: 200,
 };
-
-app.use(allowCrossDomain);
+app.use(cors(corsOptions));
 
 // mongodb connection
 connectDB();
