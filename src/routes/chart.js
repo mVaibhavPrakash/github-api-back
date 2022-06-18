@@ -3,7 +3,7 @@ import Data from '../model/model.js';
 
 const barchartRoute = express.Router();
 
-barchartRoute.get('/chart', async (req, res) => {
+barchartRoute.get('/', async (req, res) => {
   try {
     const result = await Data.find();
     let i = 0;
