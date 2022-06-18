@@ -52,7 +52,7 @@ app.use(allRoute);
 app.use(barchartRoute);
 
 //Server connection
-const PORT = 8082;
+const PORT = process.env.PORT || 8082;
 app.listen(PORT, () => {
   console.log('Server is connected');
 });
