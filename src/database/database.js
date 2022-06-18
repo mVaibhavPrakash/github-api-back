@@ -5,8 +5,9 @@ import 'dotenv/config';
 const connectDB = async () => {
   try {
     // mongodb connection string
+    //${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}
     const connection = await mongoose.connect(
-      `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@github-api.yunf1.mongodb.net/?retryWrites=true&w=majority`,
+      `mongodb+srv://vp1997dav:Vp261997@github-api.yunf1.mongodb.net/?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,

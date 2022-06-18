@@ -18,10 +18,11 @@ barchartRoute.get('/chart', async (req, res) => {
         } else {
           map.set(data.language, 1);
         }
-        i++;
       });
+      i++;
     }
     const newObj = Object.fromEntries(map);
+    console.log(newObj);
     res.status(200).send(newObj);
   } catch (err) {
     console.log(err, 'Error occurred in /bar api');
