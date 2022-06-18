@@ -13,6 +13,7 @@ app.use(urlencoded({ extended: false }));
 app.use(
   cors({
     origin: process.env.FRONT || 'http://localhost:8081',
+    credentials: true,
   })
 );
 
