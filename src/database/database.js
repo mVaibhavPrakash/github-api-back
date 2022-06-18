@@ -6,7 +6,7 @@ const connectDB = async () => {
   try {
     // mongodb connection string
     const con = await mongoose.connect(
-      `mongodb+srv://process.env.USERNAME:process.env.PASSWORD@github-api.yunf1.mongodb.net/?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@github-api.yunf1.mongodb.net/?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
