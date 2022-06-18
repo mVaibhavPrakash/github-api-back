@@ -54,5 +54,5 @@ app.use(barchartRoute);
 //Server connection
 const PORT = 8082;
 app.listen(PORT, () => {
-  console.log('Server is connectede');
+  console.log('Server is connected');
 });
