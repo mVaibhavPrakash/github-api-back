@@ -11,35 +11,20 @@ const app = express();
 
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
-/*
+
+app.use(cookieParser());
+
 let allowCrossDomain = function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header(
     'Access-Control-Allow-Headers',
-    'Content-Type, Authorization, Content-Length, X-Requested-With'
+    'Content-Type, Authorization,Accept,Origin, Content-Length, X-Requested-With'
   );
-
-  // intercept OPTIONS method
-  if ('OPTIONS' == req.method) {
-    res.status(200);
-  } else {
-    next();
-  }
+  next();
 };
 
 app.use(allowCrossDomain);
-
-*/
-
-app.use(urlencoded({ extended: false }));
-const corsOptions = {
-  origin: 'http://localhost:8081',
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
-app.use(cookieParser());
 
 // mongodb connection
 connectDB();
